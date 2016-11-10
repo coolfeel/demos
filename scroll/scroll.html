@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播</title>
+    <style type="text/css">
+        * { margin: 0;padding: 0;}
+        body{ margin-left: 200px;}
+        #container { height: 400px; width: 600px; overflow: hidden; position: relative;}             /*相对定位以便子元素绝对定位*/
+        #list { width: 4200px; height: 400px; z-index: 1;position: absolute; transition: left 1s;}
+        #list ul li { display: inline-block; float: left;}
+        #buttons { position: absolute;height: 30px;width: 150px; bottom: 20px; left: 210px; z-index: 2; border: 0px solid gray; }
+        #buttons span { width: 10px;height: 10px; background-color: #ccc; border: 1px solid gray; display: inline-block; border-radius:50%; margin-left: 11px; cursor:pointer;}
+        #buttons .on { background:orangered;}                                                         /*给黑点加样式*/
+        .arrow {z-index: 2; height: 40px; width: 40px; background-color: rgba(0,0,0,0.3);position: absolute;top: 180px; display: block; text-align: center; font-weight: bold; font-size: 36px; color: #ffffff; line-height: 40px;}
+        #prev { left: 20px;}
+        #next { right: 20px;}
+    </style>
+    <script type="text/javascript">
+        window.onload=function () {
+            var prev=document.getElementById("prev");
+            var next=document.getElementById("next");
+            var list=document.getElementById("list");
+            var buttons=document.getElementById("buttons").getElementsByTagName("span");
+			var index=1;                                             /*用来遍历span加样式*/
+
+            function animate(offset) {
+                list.style.left=parseInt(list.style.left)+offset+"px"; /*list.style.left本身是字符串要转为数字*/
+            }
+
+            function showButton() {
+            	for (var i=0;i<buttons.length;i++){
+            			if (buttons[i].className=="on"){
+            				buttons[i].className="";
+            				break;                              //下一个变红，将前一个恢复
+            			}
+            	}
+            	
+                buttons[index-1].className="on";
+            }
+
+            next.onclick=function(){
+                if (parseInt(list.style.left)<-3000){         /* 第5个图后面是又放了第1个图的辅助图(-3600px)*/
+                    list.style.left=0+"px";                   /*直接转到真正的第1个图*/
+                }
+              
+                if (index==5){
+                	index=1;
+                }
+                else{
+                	++index;                                  /*用来记录当前是第几个黑点*/
+                }
+                showButton();                                    /*给当前的span加样式*/
+                animate(-600);
+            }
+            prev.onclick=function(){
+                if (parseInt(list.style.left)>-600){
+                    list.style.left=-3000+"px";
+                }
+                
+                if (index==1){
+                	index=5;
+                }
+                else{
+                	--index;
+                }
+                
+                showButton();
+                animate(600);
+            }
+           
+            for (var i=0;i<buttons.length;i++){
+            	buttons[i].onclick=function(){
+            		var newleft=-600*(parseInt(this.getAttribute("index"))-index);   //index是当前图片的索引
+            		animate(newleft);
+            		index=parseInt(this.getAttribute("index"));                       /*获取当前index*/
+            		showButton();
+            	}
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div id="list" style="left: -600px;">
+            <ul>
+                <li><img src="img/5.jpg"></li>                                            <!--辅助图-->
+                <li><img src="img/1.jpg"></li>
+                <li><img src="img/2.jpg"></li>
+                <li><img src="img/3.jpg"></li>
+                <li><img src="img/4.jpg"></li>
+                <li><img src="img/5.jpg"></li>
+                <li><img src="img/1.jpg"></li>
+            </ul>
+        </div>
+        <div id="buttons">
+            <span index="1" class="on"></span>
+            <span index="2"></span>
+            <span index="3"></span>
+            <span index="4"></span>
+            <span index="5"></span>
+        </div>
+        <a href="javascript:void(0);" id="prev" class="arrow">&lt;</a>
+        <a href="javascript:void(0);" id="next" class="arrow">&gt;</a>
+    </div>
+</body>
+</html>
