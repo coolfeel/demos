@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#container {
+				position: relative;
+				overflow: hidden;
+				height: 1000px;
+			}
+			
+			img {
+				position: absolute;                                      /*先定位到0,重叠*/
+				left: 0;
+				transition: all .5s;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function() {
+				var box=document.getElementById('container');
+				var imgs=box.getElementsByTagName('img');
+				var imgWidth=imgs[0].offsetWidth;                       /*单张图片的宽,包括边,内边距,图片自身*/
+				var exposeWidth=160;									/*堆叠后的图片宽*/
+				var boxWidth=imgWidth+exposeWidth*(imgs.length-1);       /*容器总宽*/
+				box.style.width=boxWidth+'px';
+				
+				function setImgsPos() {                                  /*刚定义函数不执行*/
+					for (var i=1;i<imgs.length;i++) {
+						imgs[i].style.left=imgWidth+exposeWidth*(i-1)+'px';
+					}
+				}
+				
+				setImgsPos();                                           /*先执行一遍函数,初始图片位置*/
+				
+				var translate=imgWidth-exposeWidth;                     /*图片滚动距离*/
+				
+				
+				for (var i=0;i<imgs.length;i++) {
+					(function(i) {
+						imgs[i].onmouseover=function() {              
+							/*如果不加function(i)()立即执行,此时i已为4,alert(i);*/                               
+							setImgsPos();                       					                             
+							for (var j=1;j<=i;j++) {
+								imgs[j].style.left=parseInt(imgs[j].style.left)-translate+'px';
+							}
+						}
+					})(i);
+				}	
+			}
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<img src="img/1.jpg" alt="1" title="1"/>
+			<img src="img/2.jpg" alt="2" title="2"/>
+			<img src="img/3.jpg" alt="3" title="3"/>
+			<img src="img/4.jpg" alt="4" title="4"/>
+		</div>
+	</body>
+</html>
