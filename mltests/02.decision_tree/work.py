@@ -24,7 +24,7 @@ X = irisdata.values[:, : 2]
 y = str_to_num
 
 #训练模型
-clf = tree.DecisionTreeClassifier(max_depth = 4).fit(X, y)
+clf = tree.DecisionTreeClassifier(max_depth = 5, criterion = 'entropy').fit(X, y)
 
 #构建坐标矩阵
 axis_x, axis_y = np.meshgrid(np.arange(X[:, 0].min(), X[:, 0].max(), 0.01), np.arange(X[:, 1].min(), X[:, 1].max(), 0.01))
