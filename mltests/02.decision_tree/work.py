@@ -26,13 +26,8 @@ def classify(X_train, y_train):
     #将结果也化为矩阵
     result = pred.reshape(axis_x.shape)
 
-<<<<<<< HEAD
     #画分类线
     plt.contourf(axis_x, axis_y, result, alpha = 0.5)
-=======
-#训练模型
-clf = tree.DecisionTreeClassifier(max_depth = 5, criterion = 'entropy').fit(X, y)
->>>>>>> d3fa37050579e2e394ae2dbcb9f6a702efae17a8
 
     #用前2个特征的值画散点图，并按照0,1,2在颜色中分配颜色
     for i in range(irisdata.shape[0]):
