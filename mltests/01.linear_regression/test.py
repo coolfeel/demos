@@ -19,3 +19,5 @@ print(arr2.dot(arr1))
 print(np.dot(arr1, arr2))
 print(np.dot(arr2, arr1))
 
+
+print(np.abs(arr1 - arr1[0, :]))
