@@ -18,11 +18,11 @@ x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1  #花萼长
 y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1  #花萼宽
 
 xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.02), np.arange(y_min, y_max, 0.02))
-print(xx.shape)
+
 Z = clf.predict(np.c_[xx.ravel(), yy.ravel()])
-print(Z.shape)
+
 Z = Z.reshape(xx.shape)
-print(Z)
+
 
 cs = plt.contourf(xx, yy, Z, cmap = plt.cm.Paired, alpha = 0.5)
 

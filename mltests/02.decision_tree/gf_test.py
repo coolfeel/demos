@@ -2,6 +2,8 @@
 from sklearn.datasets import load_iris
 from sklearn import tree
 import graphviz
+import pandas as pd
+
 
 
 iris = load_iris()
