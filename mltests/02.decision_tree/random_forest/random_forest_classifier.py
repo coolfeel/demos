@@ -20,7 +20,7 @@ x = preprocessing.Binarizer(threshold = 1).fit_transform(X)
 
 imgs_train, imgs_test, label_train, label_test = train_test_split(x, labels, test_size = 0.3, random_state = 1)
 
-clf = RandomForestClassifier(n_estimators = 100, max_features = 700, n_jobs = -1).fit(imgs_train, label_train.values)
+clf = RandomForestClassifier(n_estimators = 400, max_features = 700, n_jobs = -1).fit(imgs_train, label_train.values)
 
 print(clf.score(imgs_test, label_test))
 
