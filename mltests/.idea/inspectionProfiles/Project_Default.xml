@@ -26,6 +26,9 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="knn_test" />
+          <option value="datas.mlaction.Ch10.kMeans.sqrt" />
+          <option value="datas.mlaction.Ch10.kMeans.power" />
+          <option value="datas.mlaction.Ch10.kMeans.zeros" />
         </list>
       </option>
     </inspection_tool>
