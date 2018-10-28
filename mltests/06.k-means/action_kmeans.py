@@ -3,7 +3,7 @@ import numpy as np
 import math
 
 
-
+#加载数据
 def load_data(filename):
     dataMat = []
     fr = open(filename)
@@ -15,11 +15,12 @@ def load_data(filename):
     return dataMat
 
 
-
+#计算2个向量的距离
 def distEclud(vecA, vecB):
     return math.sqrt(np.sum(np.power(vecA - vecB, 2)))
 
 
+#开始随机选取质心
 def randCent(datasets, k):
     n = np.shape(datasets)[1]
     centroids = np.mat(np.zeros((k, n)))
@@ -30,7 +31,7 @@ def randCent(datasets, k):
     return centroids
 
 
-
+#kmeans
 def kmeans(datasets, k, disMeas = distEclud, createCent = randCent):
     m = np.shape(datasets)[0]
     clusterAssment = np.mat(np.zeros((m, 2)))
@@ -62,7 +63,47 @@ def kmeans(datasets, k, disMeas = distEclud, createCent = randCent):
 
 
 
+#二分kmeans
+def bikmeans(datasets, k, disMeas = distEclud):
+    m = np.shape(datasets)[0]
+    clusterAssment = np.mat(np.zeros((m, 2)))             #默认为0的话，初始均为0簇
+    centroid0 = np.mean(datasets, axis = 0).tolist()[0]   #初始质心，先取所有数据集的特征列（每列都求）均值，作为质心
+    print(centroid0)
+    centLIst = [centroid0]             #质心列表
+    print(centLIst)
+    for j in range(m):                 #计算每一个样本与质心的距离,距离的平方作为评价标准SSE
+        clusterAssment[j, 1] = disMeas(np.mat(centroid0), datasets[j, :]) ** 2
+    print(clusterAssment)
+    while len(centLIst) < k:         #直到得到想要的簇数
+        lowestSSE = np.inf
+        for i in range(len(centLIst)): #当前质心的个数,遍历所有的簇，来决定最佳的簇进行划分, 为此需要划分前后的SSE
+            ptsInCurrCluster = datasets[np.nonzero(clusterAssment[:, 0] == i)[0], :]   #将该簇的所有点看成1个小的数据集
+            centroidMat, splitClustAss = kmeans(ptsInCurrCluster, 2, disMeas)          #在kmeans中划分为2个簇
+            sseSplit = sum(splitClustAss[:, 1])      #针对小数据集去划分的SSE总和，用来判断是否可以选该簇来划分
+            sseNotSplit = sum(clusterAssment[np.nonzero(clusterAssment[:, 0] != i)[0], 1]) #针对小数据集之外的数据集去划分的SSE总和
+            print("sseSplit and notsplit", sseSplit, sseNotSplit)
+            if (sseSplit + sseNotSplit) < lowestSSE:     #选该簇的数据集去划分的SSE和除该簇之外的所有数据集取划分的SSE
+                bestCentToSplit = i
+                bestNewCents = centroidMat
+                bestClustAss = splitClustAss.copy()
+                lowestSSE = sseSplit + sseNotSplit
+        bestClustAss[np.nonzero(bestClustAss[:, 0] == 1)[0], 0] = len(centLIst)
+        bestClustAss[np.nonzero(bestClustAss[:, 0] == 0)[0], 0] = bestCentToSplit
+        print("the bestCentToSplit is :", bestCentToSplit)
+        print("the len of bestClustAss :", len(bestClustAss))
+        centLIst[bestCentToSplit] = bestNewCents[0, :]
+        centLIst.append(bestNewCents[1, :])
+        clusterAssment[np.nonzero(clusterAssment[:, 0] == bestCentToSplit)[0], :] = bestClustAss
+    return np.mat(centLIst), clusterAssment
+
+
+
+
+
+
 if __name__ == '__main__':
 
     datasets = np.mat(np.loadtxt('../datas/mlaction/Ch10/testSet.txt'))
-    kmeans(datasets, 4)
+    # kmeans(datasets, 4)
+
+    bikmeans(datasets, 4)

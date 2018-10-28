@@ -51,38 +51,41 @@ def convert2vector(filename):
 
 
 
+
+
 if __name__ == '__main__':
 
-    #训练
+    #计算tfidf值
     vector_train, y_train = convert2vector('cnews.train.txt')
     tfidf_vec = TfidfVectorizer()
     X_train = tfidf_vec.fit_transform(vector_train)
 
 
     #验证
-    vector_val, y_val = convert2vector('cnews.val.txt')
-    X_val = tfidf_vec.transform(vector_val)
-
-
-    nb_param_grid = {
-        'alpha' : np.arange(0, 0.02, 0.00000001)
-    }
-    nb = MultinomialNB()
-    gd = GridSearchCV(nb, nb_param_grid, cv = 5, n_jobs = -1, verbose = 4).fit(X_val, y_val)
-    print('result : ', gd.cv_results_)
-    print('best_est : ', gd.best_estimator_)
-    print('best_score : ', gd.best_score_)
-    print('best_pra : ', gd.best_params_)
-
-
-    # clf = MultinomialNB(alpha = 0.01998)
-    # clf.fit(X_train, y_train)
+    # vector_val, y_val = convert2vector('cnews.val.txt')
+    # X_val = tfidf_vec.transform(vector_val)
     #
     #
-    # vector_test, y_test = convert2vector('cnews.test.txt')
-    # X_test = tfidf_vec.transform(vector_test)
+    # nb_param_grid = {
+    #     'alpha' : np.arange(0, 0.02, 0.000001)
+    # }
     #
-    # pred = clf.predict(X_test)
-    #
-    # print(pred)
-    # print(accuracy_score(pred, y_test))
+    # nb = MultinomialNB()
+    # gd = GridSearchCV(nb, nb_param_grid, cv = 5, n_jobs = -1, verbose = 4).fit(X_val, y_val)
+    # print('result : ', gd.cv_results_)
+    # print('best_est : ', gd.best_estimator_)
+    # print('best_score : ', gd.best_score_)
+    # print('best_pra : ', gd.best_params_)
+
+
+    clf = MultinomialNB(alpha = 0.019979999999999998)
+    clf.fit(X_train, y_train)
+
+
+    vector_test, y_test = convert2vector('cnews.test.txt')
+    X_test = tfidf_vec.transform(vector_test)
+
+    pred = clf.predict(X_test)
+
+    print(pred)
+    print(accuracy_score(pred, y_test))
