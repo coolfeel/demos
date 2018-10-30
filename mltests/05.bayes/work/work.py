@@ -2,7 +2,6 @@
 
 import jieba
 import pandas as pd
-import numpy as np
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import accuracy_score
@@ -28,7 +27,7 @@ def cut_cont(conts):
 def del_stop_words(results):
     stopwords = []
     conts_words = []
-    with open('stop_word.txt') as f:
+    with open('cnews.vocab.txt') as f:
         for line in f.readlines():
             stopwords.append(line.strip())
         f.close()
@@ -60,32 +59,33 @@ if __name__ == '__main__':
     tfidf_vec = TfidfVectorizer()
     X_train = tfidf_vec.fit_transform(vector_train)
 
+    #训练模型
+    clf = MultinomialNB(alpha = 0.019979)
+    clf.fit(X_train, y_train)
 
-    #验证
+    #测试
+    vector_test, y_test = convert2vector('cnews.test.txt')
+    X_test = tfidf_vec.transform(vector_test)
+
+    #预测
+    pred = clf.predict(X_test)
+
+    print(pred)
+    print(accuracy_score(pred, y_test))
+
+    # 验证
     # vector_val, y_val = convert2vector('cnews.val.txt')
     # X_val = tfidf_vec.transform(vector_val)
     #
-    #
+    # 设置参数
     # nb_param_grid = {
     #     'alpha' : np.arange(0, 0.02, 0.000001)
     # }
-    #
+
+    # 网格搜索
     # nb = MultinomialNB()
     # gd = GridSearchCV(nb, nb_param_grid, cv = 5, n_jobs = -1, verbose = 4).fit(X_val, y_val)
     # print('result : ', gd.cv_results_)
     # print('best_est : ', gd.best_estimator_)
     # print('best_score : ', gd.best_score_)
     # print('best_pra : ', gd.best_params_)
-
-
-    clf = MultinomialNB(alpha = 0.019979999999999998)
-    clf.fit(X_train, y_train)
-
-
-    vector_test, y_test = convert2vector('cnews.test.txt')
-    X_test = tfidf_vec.transform(vector_test)
-
-    pred = clf.predict(X_test)
-
-    print(pred)
-    print(accuracy_score(pred, y_test))
