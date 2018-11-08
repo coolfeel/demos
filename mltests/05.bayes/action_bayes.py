@@ -72,7 +72,7 @@ def classifyNB(vec2classify, p0Vec, p1Vec, pClass1):
 #贝叶斯分类
 def testingNB():
     listOPosts, listClasses = loadDataSet()
-    myVocabList = createVocabList(listOPosts)
+    myVocabList = createVocabList(listOPosts)进一步得到
     trainMat = []
     for post in listOPosts:
         trainMat.append(setOfWord2Vec(myVocabList, post))

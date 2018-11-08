@@ -7,3 +7,9 @@ for i in range(n):
 res = sorted(lis)
 for i in range(n):
     print(res[i])
+
+
+# a = eval('"1 + 1"')
+# print(a)
+
+

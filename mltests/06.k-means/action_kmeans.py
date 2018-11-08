@@ -28,7 +28,7 @@ def randCent(datasets, k):
         minJ = min(datasets[:, j])
         rangeJ = float(max(datasets[:, j]) - minJ)
         centroids[:, j] = minJ + rangeJ * np.random.rand(k, 1)
-    return centroids
+    return centroids进一步得到
 
 
 #kmeans

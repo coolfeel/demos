@@ -6,6 +6,8 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import GridSearchCV
+import datetime
+
 
 
 #加载数据
@@ -53,7 +55,7 @@ def convert2vector(filename):
 
 
 if __name__ == '__main__':
-
+    start = datetime.datetime.now()
     #计算tfidf值
     vector_train, y_train = convert2vector('cnews.train.txt')
     tfidf_vec = TfidfVectorizer()
@@ -72,7 +74,9 @@ if __name__ == '__main__':
 
     print(pred)
     print(accuracy_score(pred, y_test))
+    end = datetime.datetime.now()
 
+    print(end - start).seconds()
     # 验证
     # vector_val, y_val = convert2vector('cnews.val.txt')
     # X_val = tfidf_vec.transform(vector_val)
