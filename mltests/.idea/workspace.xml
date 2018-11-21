@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae8c7a7a-4fe9-403a-a312-3a43029d44b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/07.svm/gf_svm_digit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/08.nn/pynnaction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/08.nn/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../opencvtests/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../opencvtests/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../opencvtests/imgs/timg.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/../opencvtests/imgs/timg.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pythondemos/tests/pythontests/sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/../pythondemos/tests/pythontests/sort.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pythondemos/tests/pythontests/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../pythondemos/tests/pythontests/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,9 +20,10 @@
     <SUITE FILE_PATH="coverage/mltests$handson_housing.coverage" NAME="handson_housing Coverage Results" MODIFIED="1542452319187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/01.linear_regression" />
     <SUITE FILE_PATH="coverage/mltests$test2__1_.coverage" NAME="test2 (1) Coverage Results" MODIFIED="1541852496370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/mltests$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1542192741588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/07.svm" />
+    <SUITE FILE_PATH="coverage/mltests$pynnaction.coverage" NAME="pynnaction Coverage Results" MODIFIED="1542800630224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/08.nn" />
     <SUITE FILE_PATH="coverage/mltests$work.coverage" NAME="work Coverage Results" MODIFIED="1541638016532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/05.bayes/work" />
-    <SUITE FILE_PATH="coverage/mltests$test.coverage" NAME="test Coverage Results" MODIFIED="1542026107722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/mltests$action_svm.coverage" NAME="action_svm Coverage Results" MODIFIED="1542272039164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/07.svm" />
+    <SUITE FILE_PATH="coverage/mltests$test.coverage" NAME="test Coverage Results" MODIFIED="1542801521138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/08.nn" />
     <SUITE FILE_PATH="coverage/mltests$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1541638028048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/06.k-means" />
     <SUITE FILE_PATH="coverage/mltests$knn_classifier.coverage" NAME="knn_classifier Coverage Results" MODIFIED="1541581172122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04.knn" />
     <SUITE FILE_PATH="coverage/mltests$gf_svm_digit.coverage" NAME="gf_svm_digit Coverage Results" MODIFIED="1542280136363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/07.svm" />
@@ -47,7 +47,7 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="52" />
-          <entry key="project.open.time.0" value="3" />
+          <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="3" />
@@ -68,24 +68,24 @@
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="57" />
+          <entry key="project.opened" value="58" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="csv" value="33" />
+          <entry key="csv" value="35" />
           <entry key="data" value="2" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="1" />
           <entry key="iris" value="1" />
-          <entry key="py" value="265" />
+          <entry key="py" value="268" />
           <entry key="txt" value="63" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="csv" value="2" />
-          <entry key="py" value="55265" />
+          <entry key="py" value="58902" />
           <entry key="txt" value="23" />
         </counts>
       </usages-collector>
@@ -93,26 +93,65 @@
         <counts>
           <entry key="CSV" value="2" />
           <entry key="PLAIN_TEXT" value="23" />
-          <entry key="Python" value="55265" />
+          <entry key="Python" value="58902" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSV" value="33" />
+          <entry key="CSV" value="35" />
           <entry key="HTML" value="1" />
           <entry key="PLAIN_TEXT" value="67" />
-          <entry key="Python" value="265" />
+          <entry key="Python" value="268" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/datas/mlaction/Ch06/trainingDigits/1_0.txt">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/08.nn/pynnaction.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="127" column="13" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
+              <folding>
+                <element signature="e#2#20#0" expanded="true" />
+                <marker date="1542799863317" expanded="true" signature="213:2218" ph="..." />
+                <marker date="1542799863317" expanded="true" signature="313:893" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datas/pynn/train.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datas/pynn/test.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/08.nn/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="e#1#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -128,9 +167,9 @@
     <findStrings>
       <find />
       <find>,</find>
+      <find>&quot;</find>
     </findStrings>
     <replaceStrings>
-      <replace />
       <replace />
     </replaceStrings>
   </component>
@@ -140,8 +179,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/01.linear_regression/test.py" />
-        <option value="$PROJECT_DIR$/04.knn/knn_test.py" />
         <option value="$PROJECT_DIR$/04.knn/bi_knn_source.py" />
         <option value="$PROJECT_DIR$/04.knn/bi_knn.py" />
         <option value="$PROJECT_DIR$/04.knn/knn_test2.py" />
@@ -189,6 +226,10 @@
         <option value="$PROJECT_DIR$/venv/lib/python3.5/site-packages/scipy/stats/__init__.py" />
         <option value="$PROJECT_DIR$/07.svm/gf_svm_digit.py" />
         <option value="$PROJECT_DIR$/01.linear_regression/handson_housing.py" />
+        <option value="$PROJECT_DIR$/datas/pynn/test.csv" />
+        <option value="$PROJECT_DIR$/datas/pynn/train.csv" />
+        <option value="$PROJECT_DIR$/08.nn/pynnaction.py" />
+        <option value="$PROJECT_DIR$/08.nn/test.py" />
       </list>
     </option>
   </component>
@@ -219,6 +260,22 @@
               <item name="mltests" type="b2602c69:ProjectViewProjectNode" />
               <item name="mltests" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="mltests" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mltests" type="462c0819:PsiDirectoryNode" />
+              <item name="08.nn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mltests" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mltests" type="462c0819:PsiDirectoryNode" />
+              <item name="datas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mltests" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mltests" type="462c0819:PsiDirectoryNode" />
+              <item name="datas" type="462c0819:PsiDirectoryNode" />
+              <item name="pynn" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -233,11 +290,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/datas/pynn" />
       <recent name="$PROJECT_DIR$/datas/handson-ml" />
       <recent name="$PROJECT_DIR$/tests" />
       <recent name="$PROJECT_DIR$/05.bayes/work" />
       <recent name="$PROJECT_DIR$/datas" />
-      <recent name="$PROJECT_DIR$/datas/mlaction" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -252,7 +309,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.handson_housing">
+  <component name="RunManager" selected="Python.test">
     <configuration name="action_svm" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="mltests" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -319,7 +376,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="pynnaction" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="mltests" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -327,12 +384,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/07.svm" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/08.nn" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/07.svm/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/08.nn/pynnaction.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -349,12 +406,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/08.nn" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/08.nn/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -364,19 +421,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.test" />
       <item itemvalue="Python.action_svm" />
-      <item itemvalue="Python.test (1)" />
       <item itemvalue="Python.gf_svm_digit" />
       <item itemvalue="Python.handson_housing" />
+      <item itemvalue="Python.pynnaction" />
+      <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.pynnaction" />
         <item itemvalue="Python.handson_housing" />
         <item itemvalue="Python.gf_svm_digit" />
         <item itemvalue="Python.action_svm" />
-        <item itemvalue="Python.test (1)" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -404,13 +461,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1922" height="1092" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14621131" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12166489" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294979" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2374477" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2374477" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.34414226" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -436,31 +494,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/06.k-means/test2.py" />
-    <entry file="file://$PROJECT_DIR$/datas/digit_recognize/sample_submission.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/04.knn/knn_sz.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02.decision_tree/XGboost/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/02.decision_tree/XGboost/bk_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/07.svm/digit.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -716,6 +749,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/datas/mlaction/Ch06/trainingDigits/1_0.txt">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datas/pynn/train.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datas/pynn/test.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.5/site-packages/scipy/misc/pilutil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="110" column="4" selection-start-line="110" selection-start-column="4" selection-end-line="110" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/08.nn/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#1#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/08.nn/pynnaction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="127" column="13" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
+          <folding>
+            <element signature="e#2#20#0" expanded="true" />
+            <marker date="1542799863317" expanded="true" signature="213:2218" ph="..." />
+            <marker date="1542799863317" expanded="true" signature="313:893" ph="..." />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
