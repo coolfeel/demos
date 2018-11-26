@@ -42,7 +42,7 @@ def get_results(x, theta):
 #梯度下降法
 def grad_scent(x, y):
     #学习率
-    alpha = 0.01
+    alpha = 0.0000001
     #最大迭代次数
     max_cycle = 5
     x_size = len(x)
@@ -54,16 +54,12 @@ def grad_scent(x, y):
     # 初始化theta2
     theta2 = np.mat(np.ones((X.shape[1], 1)))
 
-
     # 迭代
     for i in range(3):
         Y_pred = X * theta2
-
         # 误差
         error = Y_pred - Y
-        a = X.T * error
-
-        theta2 = theta2 - alpha * a
+        theta2 = theta2 - alpha * X.T * error
 
     return theta2
 

@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae8c7a7a-4fe9-403a-a312-3a43029d44b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/01.linear_regression/works/assignment.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01.linear_regression/works/work.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01.linear_regression/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/01.linear_regression/test.py" afterDir="false" />
-    </list>
+    <list default="true" id="ae8c7a7a-4fe9-403a-a312-3a43029d44b0" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +17,7 @@
     <SUITE FILE_PATH="coverage/mltests$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1543232625330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/01.linear_regression" />
     <SUITE FILE_PATH="coverage/mltests$action_svm.coverage" NAME="action_svm Coverage Results" MODIFIED="1542272039164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/07.svm" />
     <SUITE FILE_PATH="coverage/mltests$test.coverage" NAME="test Coverage Results" MODIFIED="1542801521138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/08.nn" />
-    <SUITE FILE_PATH="coverage/mltests$work.coverage" NAME="work Coverage Results" MODIFIED="1543230866487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/01.linear_regression/works" />
+    <SUITE FILE_PATH="coverage/mltests$work.coverage" NAME="work Coverage Results" MODIFIED="1543233459339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/01.linear_regression/works" />
     <SUITE FILE_PATH="coverage/mltests$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1541638028048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/06.k-means" />
     <SUITE FILE_PATH="coverage/mltests$knn_classifier.coverage" NAME="knn_classifier Coverage Results" MODIFIED="1541581172122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04.knn" />
     <SUITE FILE_PATH="coverage/mltests$gf_svm_digit.coverage" NAME="gf_svm_digit Coverage Results" MODIFIED="1542280136363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/07.svm" />
@@ -45,7 +40,7 @@
     <session id="-1448790928">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="56" />
+          <entry key="project.closed" value="57" />
           <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="3" />
@@ -112,8 +107,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/01.linear_regression/works/work.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+            <state relative-caret-position="360">
+              <caret line="44" column="16" lean-forward="true" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
               <folding>
                 <element signature="e#24#42#0" expanded="true" />
                 <marker date="1543232813661" expanded="true" signature="145:150" ph="..." />
@@ -294,7 +289,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test (1)">
+  <component name="RunManager" selected="Python.work">
     <configuration name="handson_housing" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="mltests" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -414,8 +409,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.work" />
+        <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.pynnaction" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.handson_housing" />
@@ -446,14 +441,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1282" height="1036" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18233387" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3288889" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49837926" visible="true" weight="0.23666666" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49837926" weight="0.23666666" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.34414226" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -772,8 +766,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/01.linear_regression/works/work.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+        <state relative-caret-position="360">
+          <caret line="44" column="16" lean-forward="true" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
           <folding>
             <element signature="e#24#42#0" expanded="true" />
             <marker date="1543232813661" expanded="true" signature="145:150" ph="..." />
