@@ -39,29 +39,27 @@ def get_results(x, theta):
 
 
 
-#梯度下降法
-def grad_scent(x, y):
-    #学习率
-    alpha = 0.0000001
-    #最大迭代次数
-    max_cycle = 5
+#一般梯度下降法
+def grad_scent(x, y, max_cycle, alpha):
     x_size = len(x)
     ones = np.ones((x_size, 1))
     x = x.reshape((x_size, -1))
     X = np.mat(np.c_[ones, x])
     Y = np.mat(y).T
-
+    #损失值
+    loss_list = []
     # 初始化theta2
     theta2 = np.mat(np.ones((X.shape[1], 1)))
-
     # 迭代
-    for i in range(3):
+    for i in range(max_cycle):
         Y_pred = X * theta2
         # 误差
         error = Y_pred - Y
+        #计算损失值
+        loss = np.sum(np.multiply(error, error)) / x_size
+        loss_list.append(loss)
         theta2 = theta2 - alpha * X.T * error
-
-    return theta2
+    return theta2, loss_list
 
 
 
@@ -73,16 +71,28 @@ if __name__ == '__main__':
     theta = least_square(x, y)
     results = get_results(x, theta)
 
-    #梯度下降
-    theta2 = grad_scent(x, y)
-    results2 = get_results(x, theta2)
+    #最大迭代次数
+    max_cycle = 100
+    #学习率
+    alpha = 0.0000001
+    loss_lists = []
+    #一般梯度下降法,改变alpha观察损失
+    for a in np.arange(alpha, alpha + 0.000001, 0.0000001):
+        theta2, loss_list = grad_scent(x, y, max_cycle, a)
+        loss_lists.append(loss_list[-1])
 
-    np.set_printoptions(suppress = True)
-    print(results2)
-    print(theta2)
+    #results2 = get_results(x, theta2)
+    #np.set_printoptions(suppress = True)
 
-
+    print(loss_lists)
     plt.figure()
-    plt.plot(x, results2, c = 'r')
-    plt.scatter(x, y)
+    plt.title('loss and alphas')
+    #plt.title('loss and iterations')
+    plt.xlabel('alphas')
+    #plt.xlabel('iteration_times')
+    plt.ylabel('loss')
+    plt.plot(np.arange(alpha, alpha + 0.000001, 0.0000001), loss_lists, c = 'r')
+    #plt.plot(range(max_cycle), loss_list, c = 'r')
+    #plt.scatter(x, y)
+    plt.grid()
     plt.show()
