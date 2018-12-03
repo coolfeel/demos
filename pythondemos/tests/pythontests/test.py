@@ -26,6 +26,19 @@ import math
 
 # turtle.done()
 
-a = [1, 1, 2]
-b = a.count(1)
-print(b)
+# a = [1, 1, 2]
+# b = a.count(1)
+# print(b)
+
+import numpy as np
+
+
+num1 = np.array([[1,2,3],[2,3,4],[3,4,5],[4,5,6]])
+m = np.mean(num1, axis = 0)
+res = num1 - m
+print(res)
+
+import keras
+
+model = Sequential()
+print(model)
