@@ -2,15 +2,18 @@
 from mxnet import nd
 import numpy as np
 from mxnet import autograd
+import tensorflow as tf
+import theano
+import keras
 
 
 #自动求梯度
-x = nd.arange(4).reshape((4, 1))
-x.attach_grad()
-with autograd.record():
-    y = 2 * nd.dot(x.T, x)
-y.backward()
-print(x.grad)
+# x = nd.arange(4).reshape((4, 1))
+# x.attach_grad()
+# with autograd.record():
+#     y = 2 * nd.dot(x.T, x)
+# y.backward()
+# print(x.grad)
 
 # w = nd.random.normal(scale = 0.01, shape = (2, 1))
 #     #初始化bias为0
@@ -19,6 +22,8 @@ print(x.grad)
 # c = nd.ones((1, 1))
 # print(c.grad)
 
+print(keras.__version__)
+print(theano.__version__)
 
 
 
