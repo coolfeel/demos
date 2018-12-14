@@ -2,9 +2,26 @@
 from mxnet import nd
 import numpy as np
 from mxnet import autograd
-import tensorflow as tf
-import theano
-import keras
+# import tensorflow as tf
+# import theano
+# import keras
+import mxnet as mx
+from mxnet import nd
+import matplotlib.pyplot as plt
+import random
+
+
+
+#mx.random.seed(0)
+
+a = mx.nd.random.normal(scale = 0.01, shape = (2, 2))
+print(a)
+
+b = mx.nd.random.normal(scale = 0.01, shape = (2, 2))
+print(b)
+
+plt.scatter(a[0].asnumpy(), a[1].asnumpy())
+plt.show()
 
 
 #自动求梯度
@@ -21,9 +38,9 @@ import keras
 # print(b.grad)
 # c = nd.ones((1, 1))
 # print(c.grad)
-
-print(keras.__version__)
-print(theano.__version__)
+#
+# print(keras.__version__)
+# print(theano.__version__)
 
 
 
