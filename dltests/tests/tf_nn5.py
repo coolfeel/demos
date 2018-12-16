@@ -4,7 +4,6 @@ import tensorflow as tf
 
 
 
-
 def get_weights(shape, lamda):
     #获取一层神经网络边上的权重，并将这个权重的L2正则化损失加入名称为losses的集合中
     #生成一个变量
@@ -35,6 +34,7 @@ for i in range(1, n_layers):
     out_dimension = layer_dimension[i]
     #输入不算层，2为输入的，生成当前层中权重的变量，并将这个变量的L2正则化损失加入到计算图上的集合
     weight = get_weights([in_dimension, out_dimension], 0.001)
+
     bias = tf.Variable(tf.constant(0.1, shape = [out_dimension]))
     #使用ReLU
     cur_layer = tf.nn.relu(tf.matmul(cur_layer, weight) + bias)
