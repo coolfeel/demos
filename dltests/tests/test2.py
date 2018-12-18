@@ -9,17 +9,19 @@ import tensorflow as tf
 
 
 
-# v = tf.constant([[1.0, 1.0], [2.0, 2.0]])
+# v = tf.constant(0.1, shape = [5])
+# a = tf.Variable([1, 1, 1, 1, 1])
 # with tf.Session() as sess:
 #
 #     # print(sess.run(v))
 #     # a = tf.clip_by_value(v, 2.5, 5.5)
 #     # print(sess.run(a))
 #     # print(a.eval())
-#     print(tf.reduce_mean(v).eval())
+#     print(v.eval())
+#     print(a.eval())
 
 
-
+#
 # v1 = tf.constant([1.0, 2.0, 3.0, 4.0])
 # v2 = tf.constant([4.0, 3.0, 2.0, 1.0])
 #
@@ -41,8 +43,10 @@ import tensorflow as tf
 #         #current_X, current_Y =
 #         sess.run(train_step, feed_dict = {x : current_X, y_ : current_Y})
 
-x = tf.placeholder(tf.float32, shape = (1, 2))
-with tf.Session() as sess:
 
-    print(sess.run(x, feed_dict = {x : [[1, 2]]}))
-    print(x)
+
+a = tf.constant([1, 1, 2])
+b = tf.Variable([2, 2, 3])
+with tf.Session() as sess:
+    sess.run(tf.global_variables_initializer())
+    print(sess.run(tf.add(a, b)))
