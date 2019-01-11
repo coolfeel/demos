@@ -110,8 +110,9 @@ def test():
 
 
         with tf.Session() as sess:
-
+            print(log_dir)
             ckpt = tf.train.get_checkpoint_state(log_dir)
+            print(ckpt)
             if ckpt and ckpt.model_checkpoint_path:
                 global_step = ckpt.model_checkpoint_path.split('/')[-1].split('-')[-1]
                 saver.restore(sess, ckpt.model_checkpoint_path)
@@ -130,8 +131,8 @@ def test():
                 while step < num_step and not coord.should_stop():
                     batch_correct = sess.run(correct)
                     total_correct += np.sum(batch_correct)
-                    print(sess.run(logits))
-                    print(sess.run(tf.argmax(logits, axis = 1)), sess.run(tf.argmax(test_label_batch, axis=1)))
+                    # print(sess.run(logits))
+                    # print(sess.run(tf.argmax(logits, axis = 1)), sess.run(tf.argmax(test_label_batch, axis=1)))
                     step += 1
                 print('samples_nums:%d' % num_sample)
                 print('acc_nums:%d' % total_correct)
