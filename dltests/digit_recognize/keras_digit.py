@@ -91,7 +91,7 @@ model.add(Dense(10, activation = 'softmax'))
 
 #rho梯度滑动平均衰减因子,decay学习率衰减
 optimizer = RMSprop(lr = 0.001, rho = 0.9, epsilon = 1e-08, decay = 0.0)
-
+#编译
 model.compile(optimizer = optimizer, loss = 'categorical_crossentropy', metrics = ['accuracy'])
 
 
@@ -101,7 +101,7 @@ model.compile(optimizer = optimizer, loss = 'categorical_crossentropy', metrics 
 learing_rate_reduction = ReduceLROnPlateau(monitor = 'val_acc', patience = 3, verbose = 1, factor = 0.5, min_lr = 0.00001)
 
 
-epochs = 1
+epochs = 500
 batch_size = 86
 
 
@@ -129,7 +129,7 @@ datagen = ImageDataGenerator(
 
 datagen.fit(X_train)
 
-
+#学习过程
 history = model.fit_generator(
     datagen.flow(X_train, Y_train, batch_size = batch_size),
     epochs = epochs,
@@ -140,7 +140,13 @@ history = model.fit_generator(
 )
 
 
+results = model.predict(test)
+results = np.argmax(results, axis = 1)
+results = pd.Series(results, name = 'Label')
 
+submission = pd.concat([pd.Series(range(1, 28001), name = 'ImageId'), results], axis = 1)
+
+submission.to_csv('sample_submission.csv', index = 'False')
 
 
 
